@@ -1,0 +1,146 @@
+.hero {
+	text-align: center;
+    padding-top: 48px;
+	padding-bottom: 24px;
+}
+
+.hero-copy {
+    position: relative; /* To display elements above hero illustrations */
+}
+
+.hero-paragraph {
+    margin-bottom: 32px;
+}
+
+.hero-app {
+	position: relative;
+}
+
+.hero-app-illustration {
+	position: absolute;
+	top: -358px;
+	left: calc(50% - 436px);
+	pointer-events: none;
+}
+
+.hero-app-dots {
+	display: none;
+	position: absolute;
+}
+
+.hero-app-dots-1 {
+	top: 15px;
+	left: -108px;
+}
+
+.hero-app-dots-2 {
+	bottom: 100px;
+	left: 320px;
+}
+
+.device-mockup {
+	position: relative;
+	width: 750px;
+	height: auto;
+	margin: 0 auto;
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(40px) translateX(-15px);
+	transition: opacity .6s cubic-bezier(0.5, -0.01, 0, 1.005), transform .6s cubic-bezier(0.5, -0.01, 0, 1.005);
+
+	&.has-loaded {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0) translateX(-15px);
+	}
+}
+
+.hero-cta {
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 40px;
+}
+
+@include media( '<medium' ) {
+
+	.hero-cta {
+
+		.button {
+			display: flex;
+
+			+ .button {
+				margin-top: 16px;
+			}
+		}
+	}
+
+	.hero-shape-top {
+		display: none;
+	}
+}
+
+@include media( '>medium' ) {
+
+    .hero {
+		position: relative;
+		text-align: left;
+        padding-top: 1px;
+        padding-bottom: 12px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 20px;
+			width: 415px;
+			height: 461px;
+		}
+    }
+
+	.hero-inner {
+		/* Split hero in two half */
+		display: flex;
+		justify-content: space-between;
+	}
+
+    .hero-copy {
+        padding-top: 88px;
+        padding-right: 48px;
+        min-width: 448px;
+        max-width: 588px;
+    }
+
+	.hero-title {
+		margin-bottom: 24px;
+	}
+
+	.hero-paragraph {
+		margin-bottom: 40px;
+        text-align: justify;
+	}
+
+	.hero-app-illustration {
+		left: -257px;
+	}
+
+	.hero-app-dots {
+		display: block;
+	}
+
+	.device-mockup {
+		max-width:fit-content;
+	}
+
+	.hero-cta {
+		margin: 0;
+
+		.button {
+			min-width: 170px;
+
+			&:first-child {
+				margin-right: 16px;
+			}
+		}
+	}
+}

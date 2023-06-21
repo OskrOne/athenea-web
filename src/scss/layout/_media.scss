@@ -1,0 +1,81 @@
+.media {
+
+	.section-inner {
+		padding-bottom: 104px;
+	}
+
+	.section-paragraph {
+		margin-bottom: 48px;
+	}
+}
+
+.media-canvas {
+	position: relative;
+
+	svg {
+		position: relative; /* To display the canvas above the illustration */
+		width: 100%;
+		height: auto;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 320px;
+		height: 230px;
+		bottom: -76px;
+		left: calc(50% - 160px);
+		background-repeat: no-repeat;
+		background-size: 320px 230px;
+	}
+}
+
+.media-control {
+	position: absolute;
+	top: calc(50% - 24px);
+	left: calc(50% - 24px);
+	cursor: pointer;
+
+	svg {
+		width: 48px;
+		height: 48px;
+		overflow: visible;
+	}
+}
+
+@include media( '>medium' ) {
+
+	.media {
+
+		.section-inner {
+			padding-bottom: 144px;
+		}
+
+		.section-paragraph {
+			padding-left: 72px;
+	    	padding-right: 72px;
+			margin-bottom: 80px;
+		}
+	}
+
+	.media-canvas {
+
+		&::before {
+			width: 530px;
+			height: 380px;
+			bottom: -128px;
+			left: calc(50% - 275px);
+			background-size: 530px 380px;
+		}
+	}
+
+	.media-control {
+		top: calc(50% - 48px);
+		left: calc(50% - 48px);
+
+		svg {
+			width: 96px;
+			height: 96px;
+		}
+	}
+}
